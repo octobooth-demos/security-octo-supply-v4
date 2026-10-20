@@ -1,0 +1,68 @@
+{
+  // markdownlint rule configuration for demo documentation
+  // See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+  // --- Disabled rules (too noisy for existing demo docs or by design) ---
+
+  // Heading levels intentionally skip (h1 → h3) in walkthroughs
+  "MD001": false,
+
+  // Multiple blank lines used for readability in long docs
+  "MD012": false,
+
+  // Disable line length — demo docs have long description lines
+  "MD013": false,
+
+  // Blanks around headings — many violations in DEMO-INVENTORY.md
+  "MD022": false,
+
+  // Allow multiple top-level headings — walkthrough files group multiple demos
+  "MD025": false,
+
+  // Allow duplicate headings — common in walkthrough files (e.g., "Prep", "Steps")
+  "MD024": false,
+
+  // Blank lines inside blockquotes — used intentionally for multi-paragraph quotes
+  "MD028": false,
+
+  // Fenced code blocks inside numbered lists often lack surrounding blank lines
+  "MD031": false,
+
+  // Allow HTML — used for <details>, <summary>, and Liquid templates
+  "MD033": false,
+
+  // Bare URLs are acceptable in demo docs
+  "MD034": false,
+
+  // Allow emphasis as heading — used in demo docs for callouts
+  "MD036": false,
+
+  // Code block style — indented blocks used in some walkthroughs
+  "MD046": false,
+
+  // Link fragment validation — false positives with Liquid-templated content
+  "MD051": false,
+
+  // Table column alignment style — too strict for demo docs
+  "MD060": false,
+
+  // --- Enabled rules ---
+
+  // Enforce consistent unordered list style (dash)
+  "MD004": { "style": "dash" },
+
+  // Enforce consistent list indentation (2 spaces)
+  "MD007": { "indent": 2 },
+
+  // No trailing spaces (allow 2 for line break)
+  "MD009": { "br_spaces": 2 },
+
+  // Require blank line before lists
+  "MD032": true,
+
+  // Enforce consistent ordered list style (allow one_or_ordered for conditional-block skips)
+  "MD029": { "style": "one_or_ordered" },
+
+  // Consistent spacing after list markers
+  "MD030": true
+}

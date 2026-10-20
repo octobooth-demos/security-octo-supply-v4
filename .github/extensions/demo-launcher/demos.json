@@ -1,0 +1,9 @@
+{
+  "hydrafusion": {
+    "title": "HydraFusion",
+    "promptFile": "../../prompts/hydrafusion-prep.prompt.md",
+    "model": "hydrafusion",
+    "mode": "autopilot",
+    "description": "Choose a task to start in its own worktree, or launch the full demo. HydraFusion selects the execution pattern for each prompt."
+  }
+}

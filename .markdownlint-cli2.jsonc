@@ -1,0 +1,10 @@
+{
+  // markdownlint-cli2 configuration
+  // Targets demo documentation markdown files
+  "globs": ["demo/**/*.md"],
+  "ignores": ["**/node_modules/**"],
+  "config": {
+    // Extend the config from .markdownlint.jsonc
+    "extends": ".markdownlint.jsonc"
+  }
+}

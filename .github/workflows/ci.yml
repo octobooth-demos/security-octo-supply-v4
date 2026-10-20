@@ -1,0 +1,97 @@
+name: 🧪 CI - Build, Test and Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  code-quality: write
+
+jobs:
+  backend:
+    name: Backend - Build, Test and Lint
+    runs-on: ubuntu-latest
+    if: |
+      github.actor != 'dependabot[bot]' && 
+      !startsWith(github.head_ref, 'dependabot/')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: "npm"
+          cache-dependency-path: api/package-lock.json
+
+      - name: Install dependencies
+        working-directory: api
+        run: npm ci
+
+      - name: Lint API
+        id: lint
+        if: always()
+        working-directory: api
+        run: npm run lint
+
+      - name: Build API
+        id: build
+        if: always()
+        working-directory: api
+        run: npm run build
+
+      - name: Run API Tests with Coverage
+        id: tests
+        if: always()
+        working-directory: api
+        run: npm run test:coverage
+
+      - name: Upload API Coverage Report
+        if: always() && steps.tests.outcome == 'success' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        uses: actions/upload-code-coverage@2b21a77928be8d5168c2b9581a67f2adbebacc52 # v1.4.4
+        with:
+          file: api/coverage/cobertura-coverage.xml
+          language: JavaScript
+          label: code-coverage/node-api
+
+  frontend:
+    name: Frontend - Build and Lint
+    runs-on: ubuntu-latest
+    if: |
+      github.actor != 'dependabot[bot]' && 
+      !startsWith(github.head_ref, 'dependabot/')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Setup Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Lint Frontend
+        id: lint
+        if: always()
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Build Frontend
+        id: build
+        if: always()
+        working-directory: frontend
+        run: npm run build
