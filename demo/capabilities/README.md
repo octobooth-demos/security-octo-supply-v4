@@ -70,7 +70,6 @@ Each capability lists the **Prestaged Content** it uses; the full catalog of tho
 `area.copilot.general`
 
 - **Copilot Plan Mode** — `capability.copilot-plan-mode`
-- **HydraFusion** — `capability.hydrafusion`
 - **Copilot Vision** — `capability.copilot-vision`
 - **Copilot Subagents** — `capability.copilot-subagents`
 - **Copilot Voice** — `capability.copilot-voice` ⚠️ **TBD value**

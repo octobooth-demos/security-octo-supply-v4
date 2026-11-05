@@ -4,7 +4,6 @@ description: Suggest issue labels, type, and optional severity for human review.
 on:
   issues:
     types: [opened]
-  roles: all
 permissions:
   contents: read
   issues: read

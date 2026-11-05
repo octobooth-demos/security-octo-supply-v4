@@ -3,7 +3,7 @@
 - **id**: area.copilot.general
 - **product**: GitHub Copilot (`product.copilot`)
 
-**Capabilities in this group:** `capability.copilot-plan-mode`, `capability.hydrafusion`, `capability.copilot-vision`, `capability.copilot-subagents`, `capability.copilot-voice`, `capability.custom-agents`, `capability.custom-instructions`, `capability.custom-prompts`, `capability.mcp-servers`, `capability.playwright-mcp`, `capability.rubber-duck-review`, `capability.agent-skills`, `capability.agent-hooks`, `capability.mission-control`, `capability.agent-automations`, `capability.plugins-marketplace`
+**Capabilities in this group:** `capability.copilot-plan-mode`, `capability.copilot-vision`, `capability.copilot-subagents`, `capability.copilot-voice`, `capability.custom-agents`, `capability.custom-instructions`, `capability.custom-prompts`, `capability.mcp-servers`, `capability.playwright-mcp`, `capability.rubber-duck-review`, `capability.agent-skills`, `capability.agent-hooks`, `capability.mission-control`, `capability.agent-automations`, `capability.plugins-marketplace`
 
 ---
 
@@ -30,31 +30,6 @@ A Copilot Chat mode that structures and decomposes complex work into an interact
 - `walkthrough.copilot.plan-mode`
 - `walkthrough.copilot.app-research-plan`
 - `walkthrough.microsoft-foundry.build-the-ui`
-
-## HydraFusion
-
-- **id**: capability.hydrafusion
-
-An experimental Copilot orchestration system available in the GitHub Copilot App and Copilot CLI. HydraFusion selects the simplest execution workflow expected to meet the task's quality bar. It can use a Single, Cascade, or Critique pattern, coordinating planning, escalation, review, and implementation when the work warrants it.
-
-### Value Proposal
-
-- **Adaptive workflow selection** - Chooses an appropriate workflow, not merely a single model, reducing the cognitive burden of deciding how work should progress from planning through critique and implementation.
-- **Built-in quality controls** - More complex work can be escalated or independently critiqued before Copilot returns the final response; straightforward tasks can still use the Single pattern.
-- **One unified result** - Internal coordination is presented through model-agnostic progress such as drafting, reviewing, and repairing, while the developer receives one final answer.
-- **Experimental evaluation** - The current experience is intended for evaluation and feedback. It complements, rather than replaces, human review and does not guarantee a particular quality, performance, latency, token-use, or cost outcome.
-
-### Prestaged content
-
-- `content.hydrafusion-prep-prompt` — App prompt for creating three independently named HydraFusion sessions.
-- `content.hydrafusion-prep-canvas` — one-button App launcher for the three preparation tasks.
-- `content.hydrafusion-single-prompt` — README test-command documentation prompt for the Single pattern.
-- `content.hydrafusion-cascade-prompt` — database disruption test prompt for the Cascade pattern, expecting a 500 response without exposed details.
-- `content.hydrafusion-critique-prompt` — order-tracking planning and implementation prompt, based on a UI design, for the Critique pattern.
-
-### Shown in walkthroughs
-
-- [`walkthrough.copilot.hydrafusion`](../walkthroughs/copilot/hydrafusion.md) — HydraFusion workflow orchestration in the GitHub Copilot App.
 
 ## Copilot Vision
 

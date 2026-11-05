@@ -52,13 +52,6 @@ Comprehensive demonstrations of GitHub Copilot's capabilities including:
 - **CI/CD Generation**: Automated workflow creation with Actions and Infrastructure as Code
 - **Copilot Cloud Agent**: Async task handoff and parallel experimentation
 
-**File:** [hydrafusion.md](./copilot/hydrafusion.md)
-
-Demonstrate experimental HydraFusion workflow orchestration in the GitHub Copilot App:
-
-- **Adaptive Workflows**: Run Single-, Cascade-, and Critique-style tasks in separate App sessions
-- **Unified Results**: Show model-agnostic drafting, review, and repair progress while explaining policy-aware workflow selection
-
 **File:** [github-mcp-security-scanning.md](./copilot/github-mcp-security-scanning.md)
 
 Show how the GitHub Remote MCP Server brings security checks into Copilot Agent mode or Copilot CLI:
