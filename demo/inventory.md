@@ -282,6 +282,13 @@ Each item has a `content.*` id and **showcases** one or more [capabilities](./ca
 - **what**: `api/ca.key` (RSA token).
 - **showcases**: [`capability.secret-scanning`](./capabilities/secret-scanning.md)
 
+### Leaked secrets in api/.env.example
+
+- **id**: `content.env-example-secrets`
+- **type**: secret-scanning-alert
+- **what**: `api/.env.example` (GitHub PAT + AI-detected password). Removed by a subsequent commit, so it only exists in the git history.
+- **showcases**: [`capability.secret-scanning`](./capabilities/secret-scanning.md)
+
 ## Patch Sets
 
 ### Custom instructions patch

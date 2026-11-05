@@ -23,6 +23,7 @@ Detection of committed credentials across the full Git history, including AI-det
 
 ### Prestaged content
 
+- `content.env-example-secrets` — `api/.env.example` (GitHub PAT + AI-detected password). Removed by a subsequent commit, so it only exists in the git history.
 - `content.ca-key-secret` — `api/ca.key` (RSA token).
 - `content.slack-token-alert` — leaked Slack API token alert (with extended metadata).
 

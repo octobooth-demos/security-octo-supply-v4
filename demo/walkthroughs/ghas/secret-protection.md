@@ -4,11 +4,13 @@
 
 - **id**: walkthrough.ghas.secret-scanning-existing
 - **Capabilities:** [Secret Scanning](../../capabilities/secret-scanning.md#secret-scanning) (`capability.secret-scanning`)
-- **Contents:** [Leaked RSA key](../../inventory.md) (`content.ca-key-secret`)
+- **Contents:** [Leaked RSA key](../../inventory.md) (`content.ca-key-secret`), [Leaked secrets in .env.example](../../inventory.md) (`content.env-example-secrets`)
 
 1. Go to the Repository -> Security -> Secrets
-2. You will see a generic alert:
-    1. **Generic: RSA Token** - Leaked in `api/ca.key`, this is a so called `non-provider` pattern secret
+2. You will see at least two alerts: one default and one or two generic alerts (the AI-detected alert can take a while to show up)
+    1. **Default: GitHub PAT** - This got leaked within the `api/.env.example` file - however, another commit removed the secret again. You can showcase how Secret Scanning goes through the entire GitHub history
+    2. **Generic: AI Detected Password** - Also leaked in the `api/.env.example` and removed in another commit, this is so called `generic secret` detected by AI. It's supposed to be a project specific password, so you can demo how GitHub is also capable of detecting these.
+    3. **Generic: RSA Token** - Leaked in `api/ca.key`, this is a so called `non-provider` pattern secret
 
 ### Push Protection: Anthropic API Key
 
