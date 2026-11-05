@@ -322,12 +322,7 @@
         "content.product-stock-api-issue",
         "content.product-stock-frontend-issue",
         "scenario.cart-page",
-        "scenario.order-tracking",
-        "content.hydrafusion-prep-prompt",
-        "content.hydrafusion-prep-canvas",
-        "content.hydrafusion-single-prompt",
-        "content.hydrafusion-cascade-prompt",
-        "content.hydrafusion-critique-prompt"
+        "scenario.order-tracking"
       ],
       "walkthroughRefs": [
         "walkthrough.copilot.on-github-epic-from-mockup",
@@ -339,7 +334,6 @@
         "walkthrough.copilot.app-review-results",
         "walkthrough.copilot.app-pr-stacks",
         "walkthrough.copilot.app-compliance-workflow",
-        "walkthrough.copilot.hydrafusion",
         "walkthrough.copilot.msbuild-canvas-issue-analyzer",
         "walkthrough.copilot.msbuild-rubber-duck-review",
         "walkthrough.copilot.msbuild-agent-merge"
@@ -359,11 +353,9 @@
       ],
       "prestagedContent": [
         "scenario.cart-page",
-        "content.issue-readiness-canvas",
-        "content.hydrafusion-prep-canvas"
+        "content.issue-readiness-canvas"
       ],
       "walkthroughRefs": [
-        "walkthrough.copilot.hydrafusion",
         "walkthrough.copilot.msbuild-canvas-issue-analyzer"
       ]
     },
@@ -536,31 +528,6 @@
         "walkthrough.copilot.plan-mode",
         "walkthrough.copilot.app-research-plan",
         "walkthrough.microsoft-foundry.build-the-ui"
-      ]
-    },
-    {
-      "id": "capability.hydrafusion",
-      "name": "HydraFusion",
-      "product": "product.copilot",
-      "area": "area.copilot.general",
-      "areaName": "Copilot General",
-      "file": "demo/capabilities/copilot-general.md",
-      "description": "An experimental Copilot orchestration system available in the GitHub Copilot App and Copilot CLI. HydraFusion selects the simplest execution workflow expected to meet the task's quality bar. It can use a Single, Cascade, or Critique pattern, coordinating planning, escalation, review, and implementation when the work warrants it.",
-      "valueProposal": [
-        "**Adaptive workflow selection** - Chooses an appropriate workflow, not merely a single model, reducing the cognitive burden of deciding how work should progress from planning through critique and implementation.",
-        "**Built-in quality controls** - More complex work can be escalated or independently critiqued before Copilot returns the final response; straightforward tasks can still use the Single pattern.",
-        "**One unified result** - Internal coordination is presented through model-agnostic progress such as drafting, reviewing, and repairing, while the developer receives one final answer.",
-        "**Experimental evaluation** - The current experience is intended for evaluation and feedback. It complements, rather than replaces, human review and does not guarantee a particular quality, performance, latency, token-use, or cost outcome."
-      ],
-      "prestagedContent": [
-        "content.hydrafusion-prep-prompt",
-        "content.hydrafusion-prep-canvas",
-        "content.hydrafusion-single-prompt",
-        "content.hydrafusion-cascade-prompt",
-        "content.hydrafusion-critique-prompt"
-      ],
-      "walkthroughRefs": [
-        "walkthrough.copilot.hydrafusion"
       ]
     },
     {
@@ -1894,47 +1861,6 @@
       "file": "demo/inventory.md"
     },
     {
-      "id": "content.hydrafusion-prep-prompt",
-      "name": "HydraFusion App session preparation prompt",
-      "what": "`.github/prompts/hydrafusion-prep.prompt.md` asks the GitHub Copilot App to create three independent sessions, select HydraFusion for each, prefix session names with `[HydraFusion - Single]`, `[HydraFusion - Cascade]`, and `[HydraFusion - Critique]`, and submit the matching demo task.",
-      "showcases": [
-        "capability.hydrafusion",
-        "capability.github-copilot-app"
-      ],
-      "type": "custom-prompt",
-      "file": "demo/inventory.md"
-    },
-    {
-      "id": "content.hydrafusion-single-prompt",
-      "name": "HydraFusion Single prompt",
-      "what": "`Add the test command to the README docs.`",
-      "showcases": [
-        "capability.hydrafusion"
-      ],
-      "type": "custom-prompt",
-      "file": "demo/inventory.md"
-    },
-    {
-      "id": "content.hydrafusion-cascade-prompt",
-      "name": "HydraFusion Cascade prompt",
-      "what": "`Add a test for the branch API endpoint to gracefully handle database disruptions, ensuring they return a 500 without showing details. Use the existing test framework for the backend in this repository.`",
-      "showcases": [
-        "capability.hydrafusion"
-      ],
-      "type": "custom-prompt",
-      "file": "demo/inventory.md"
-    },
-    {
-      "id": "content.hydrafusion-critique-prompt",
-      "name": "HydraFusion Critique prompt",
-      "what": "`Plan and implement an order tracking page and feature. Use the UI design in docs/design/order-tracking-prototype.png to get an idea of what it should look like. Make sure all routes and paths are tested, and corner cases are sufficiently handled.`",
-      "showcases": [
-        "capability.hydrafusion"
-      ],
-      "type": "custom-prompt",
-      "file": "demo/inventory.md"
-    },
-    {
       "id": "content.demo-prompts",
       "name": "Demo prompts",
       "what": "`.github/prompts/demo-cart-page.prompt.md`, `demo-unit-test-coverage.prompt.md`, `refine-prompt`, `demo-cca-parallel`.",
@@ -2248,18 +2174,6 @@
         "capability.copilot-spaces"
       ],
       "type": "copilot-space",
-      "file": "demo/inventory.md"
-    },
-    {
-      "id": "content.hydrafusion-prep-canvas",
-      "name": "Demo Launcher canvas (HydraFusion configuration)",
-      "what": "`.github/extensions/demo-launcher/` provides the configuration-driven Demo Launcher canvas, initially configured for HydraFusion tasks. Launch tasks individually or together, relaunch them, and open their latest sessions inline, with an explicit agent fallback on hosts without direct App creation.",
-      "showcases": [
-        "capability.hydrafusion",
-        "capability.github-copilot-app",
-        "capability.copilot-canvases"
-      ],
-      "type": "custom-agent",
       "file": "demo/inventory.md"
     },
     {
@@ -2927,7 +2841,7 @@
       "contents": [
         "content.improve-api-test-coverage-issue"
       ],
-      "content": "1. **Add the demo repository**: Use the split button to click \"Add GitHub repository\", search for `demo_octocat_supply`, and add it. The repo will be cloned and you'll land on the session screen.\n2. **Kick off the cart page session immediately** (before touring the interface -- this gives the agent time to work while you talk):\n\n    ```prompt\n    I want to add a Cart Page to the frontend application. The page should:\n    - Display all items currently in the cart with their quantities and prices\n    - Allow updating quantities and removing items\n    - Show a subtotal, shipping fee ($25, free for orders over $150), and total\n    - Add a cart icon to the NavBar that shows the number of items and navigates to the cart page when clicked\n\n    Use the existing product and cart patterns in the codebase.\n    ```\n\n3. **Highlight the chat interface** while the agent starts working:\n   - Show the agent mode options (interactive, plan, autopilot) and model/reasoning effort selection.\n   - Point out how you can watch live what the agent is doing -- files being read, commands being run.\n   - Click on files the agent is reading to view their contents in the side panel.\n4. **Open the side panel** (top right button) to show:\n   - **Changes view**: Live view of files the agent is modifying\n   - **Terminal**: Built-in terminal scoped to this session's worktree\n   - **File tree**: Browse the repository files\n5. **Explain the worktree model**: Open a session in Finder (right-click > \"Reveal in Finder\") to show that each session lives in its own worktree under a `.copilot` folder -- this is why agents can work in parallel without branch conflicts.\n6. **Open in VS Code**: Show the button (top right) that opens the current session's worktree in VS Code, demonstrating you can always \"step out\" to a full IDE if needed. You can also open in Finder or any other installed IDE/terminal."
+      "content": "1. **Add the demo repository**: Use the split button to click \"Add GitHub repository\", search for your demo repository (the one created from this template), and add it. The repo will be cloned and you'll land on the session screen.\n2. **Kick off the cart page session immediately** (before touring the interface -- this gives the agent time to work while you talk):\n\n    ```prompt\n    I want to add a Cart Page to the frontend application. The page should:\n    - Display all items currently in the cart with their quantities and prices\n    - Allow updating quantities and removing items\n    - Show a subtotal, shipping fee ($25, free for orders over $150), and total\n    - Add a cart icon to the NavBar that shows the number of items and navigates to the cart page when clicked\n\n    Use the existing product and cart patterns in the codebase.\n    ```\n\n3. **Highlight the chat interface** while the agent starts working:\n   - Show the agent mode options (interactive, plan, autopilot) and model/reasoning effort selection.\n   - Point out how you can watch live what the agent is doing -- files being read, commands being run.\n   - Click on files the agent is reading to view their contents in the side panel.\n4. **Open the side panel** (top right button) to show:\n   - **Changes view**: Live view of files the agent is modifying\n   - **Terminal**: Built-in terminal scoped to this session's worktree\n   - **File tree**: Browse the repository files\n5. **Explain the worktree model**: Open a session in Finder (right-click > \"Reveal in Finder\") to show that each session lives in its own worktree under a `.copilot` folder -- this is why agents can work in parallel without branch conflicts.\n6. **Open in VS Code**: Show the button (top right) that opens the current session's worktree in VS Code, demonstrating you can always \"step out\" to a full IDE if needed. You can also open in Finder or any other installed IDE/terminal."
     },
     {
       "id": "walkthrough.copilot.app-interface-tour",
@@ -3053,26 +2967,6 @@
         "content.inject-secrets-patch"
       ],
       "content": "1. Apply the patch set `GHAS: Inject Secrets` from the [patch sets guide](../../general/patch-sets.md).\n2. Confirm the patch created an uncommitted `logs/debug.log` file.\n3. In Copilot Chat Agent mode or Copilot CLI, run the secret scanning skill:\n\n   ```prompt\n   /secret-scanning Use the GitHub Remote MCP secret scanning tools to scan my current uncommitted changes for exposed secrets. Show the file, line number, secret type, and the exact remediation steps I should take before I commit.\n   ```\n\n4. Show that Copilot invokes MCP secret scanning and returns the leaked secret location without needing to push first.\n5. Ask Copilot to remove or redact the secret:\n\n   ```prompt\n   Remove the exposed secret safely, keep the file useful for debugging, and then scan the changed files again.\n   ```\n\n6. If needed, run the skill again explicitly:\n\n   ```prompt\n   /secret-scanning Scan the changed files again and confirm whether any exposed secrets remain.\n   ```\n\n7. Show the clean follow-up scan result."
-    },
-    {
-      "id": "walkthrough.copilot.hydrafusion",
-      "walkthroughName": "HydraFusion",
-      "title": "Demo: Adaptive Workflow Orchestration in the GitHub Copilot App",
-      "file": "demo/walkthroughs/copilot/hydrafusion.md",
-      "capabilities": [
-        "capability.github-copilot-app",
-        "capability.hydrafusion",
-        "capability.copilot-canvases"
-      ],
-      "contents": [
-        "content.hydrafusion-prep-prompt",
-        "content.hydrafusion-prep-canvas",
-        "content.hydrafusion-single-prompt",
-        "content.hydrafusion-cascade-prompt",
-        "content.hydrafusion-critique-prompt"
-      ],
-      "prep": "Add the rendered demo repository to the GitHub Copilot App and use an account where HydraFusion is enabled.",
-      "content": "1. Open the rendered demo repository in the GitHub Copilot App. For each task below, create a separate session with its own worktree, select **HydraFusion** as the model, and use Autopilot mode. Copy and paste the matching prompt to start the task manually. If you prepared sessions with the optional canvas or prep prompt, open those sessions instead.\n\n2. Create and name a session **[HydraFusion-Single] Update Docs**, then submit:\n\n   ```prompt\n   Add the test command to the README docs.\n   ```\n\n   Explain that straightforward work can use the Single workflow. HydraFusion selects the workflow rather than committing every task to a fixed model or multi-model process.\n\n3. Create and name a session **[HydraFusion-Cascade] Add Tests**, then submit:\n\n   ```prompt\n   Add a test for the branch API endpoint to gracefully handle database disruptions, ensuring they return a 500 without showing details. Use the existing test framework for the backend in this repository.\n   ```\n\n   Point out the model-agnostic progress and explain that Cascade can draft a candidate, then accept it or escalate when the task calls for stronger reasoning.\n\n4. Create and name a session **[HydraFusion-Critique] Implement Feature**, then submit:\n\n   ```prompt\n   Plan and implement an order tracking page and feature. Use the UI design in <copilot-ref kind=\"file\" target-id=\"docs/design/order-tracking-prototype.png\" label=\"order-tracking-prototype.png\" /> to get an idea of what it should look like. Make sure all routes and paths are tested, and corner cases are sufficiently handled.\n   ```\n\n   Explain that Critique can add an independent read-only review and one revision before Copilot returns a unified response. It augments, but does not replace, the team's human review process.\n\n5. Compare the three sessions in the App's session list. Discuss how HydraFusion can coordinate planning, critique, escalation, and implementation without requiring developers to select the model or workflow for every task. Do not promise a fixed model roster, universal multi-model use, or a guaranteed quality, speed, token, or cost outcome; the selected workflow may differ from the intended pattern on a particular run."
     },
     {
       "id": "walkthrough.copilot.mcp-playwright",
@@ -3616,9 +3510,9 @@
       "16 reference(s) to 3 unregistered scenario.* ID(s): scenario.cart-page, scenario.order-tracking, scenario.tos-download"
     ],
     "stats": {
-      "capabilities": 63,
-      "content": 86,
-      "walkthroughs": 93
+      "capabilities": 62,
+      "content": 81,
+      "walkthroughs": 92
     }
   }
 }

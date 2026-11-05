@@ -381,34 +381,6 @@ Each item has a `content.*` id and **showcases** one or more [capabilities](./ca
 
 ## Custom Prompts
 
-### HydraFusion App session preparation prompt
-
-- **id**: `content.hydrafusion-prep-prompt`
-- **type**: custom-prompt
-- **what**: `.github/prompts/hydrafusion-prep.prompt.md` asks the GitHub Copilot App to create three independent sessions, select HydraFusion for each, prefix session names with `[HydraFusion - Single]`, `[HydraFusion - Cascade]`, and `[HydraFusion - Critique]`, and submit the matching demo task.
-- **showcases**: [`capability.hydrafusion`](./capabilities/copilot-general.md), [`capability.github-copilot-app`](./capabilities/copilot-app.md)
-
-### HydraFusion Single prompt
-
-- **id**: `content.hydrafusion-single-prompt`
-- **type**: custom-prompt
-- **what**: `Add the test command to the README docs.`
-- **showcases**: [`capability.hydrafusion`](./capabilities/copilot-general.md)
-
-### HydraFusion Cascade prompt
-
-- **id**: `content.hydrafusion-cascade-prompt`
-- **type**: custom-prompt
-- **what**: `Add a test for the branch API endpoint to gracefully handle database disruptions, ensuring they return a 500 without showing details. Use the existing test framework for the backend in this repository.`
-- **showcases**: [`capability.hydrafusion`](./capabilities/copilot-general.md)
-
-### HydraFusion Critique prompt
-
-- **id**: `content.hydrafusion-critique-prompt`
-- **type**: custom-prompt
-- **what**: `Plan and implement an order tracking page and feature. Use the UI design in docs/design/order-tracking-prototype.png to get an idea of what it should look like. Make sure all routes and paths are tested, and corner cases are sufficiently handled.`
-- **showcases**: [`capability.hydrafusion`](./capabilities/copilot-general.md)
-
 ### Demo prompts
 
 - **id**: `content.demo-prompts`
@@ -645,13 +617,6 @@ Each item has a `content.*` id and **showcases** one or more [capabilities](./ca
 - **showcases**: [`capability.agent-automations`](./capabilities/copilot-ide.md), [`capability.copilot-spaces`](./capabilities/copilot-spaces.md)
 
 ## Canvases
-
-### Demo Launcher canvas (HydraFusion configuration)
-
-- **id**: `content.hydrafusion-prep-canvas`
-- **type**: custom-agent
-- **what**: `.github/extensions/demo-launcher/` provides the configuration-driven Demo Launcher canvas, initially configured for HydraFusion tasks. Launch tasks individually or together, relaunch them, and open their latest sessions inline, with an explicit agent fallback on hosts without direct App creation.
-- **showcases**: [`capability.hydrafusion`](./capabilities/copilot-general.md), [`capability.github-copilot-app`](./capabilities/copilot-app.md), [`capability.copilot-canvases`](./capabilities/copilot-app.md)
 
 ### Issue readiness canvas
 

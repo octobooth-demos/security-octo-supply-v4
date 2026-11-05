@@ -1,7 +1,7 @@
 # GitHub Copilot App Demo Walkthroughs
 
 > [!TIP]
-> If you don't have the GitHub Copilot App installed yet, head over to the [github/github-app](https://github.com/github/github-app) repository for download links, release notes, and platform-specific installation instructions.
+> If you don't have the GitHub Copilot App installed yet, see the [GitHub Copilot documentation](https://docs.github.com/copilot) for download links and platform-specific installation instructions.
 
 > [!WARNING]
 > **Early Alpha**: The GitHub Copilot App is heavily work in progress. Features may change, bugs may appear, and some things shown in demo videos may already be outdated. Pre-warn your audience that there may be rough edges -- the overall concept is the key message.
@@ -28,8 +28,6 @@ Before demoing the GitHub Copilot App, ensure the following:
 
 **Duration:** ~15-20 minutes (including interface tour; agent runs ~3-4 minutes in background)
 
-**Video:** [GitHub Copilot App 01 - Intro and Cart Page](https://microsofteur.sharepoint.com/:v:/s/octodemo/IQDIxkB7mGBOQp8DbmwzoyiuARufUsSplOsUWiN9BBFCGP0?e=cLtCFg&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-
 > [!NOTE]
 > There is already an existing issue and reference PR in the repo for the cart page feature. This enables **time-jump scenarios** -- you can kick off the agent live and then switch to a pre-completed session to show results immediately.
 
@@ -39,7 +37,7 @@ Before demoing the GitHub Copilot App, ensure the following:
 - **Capabilities:** [GitHub Copilot App](../../capabilities/copilot-app.md#github-copilot-app) (`capability.github-copilot-app`), [Copilot Cloud Agent (CCA)](../../capabilities/copilot-ide.md#copilot-coding-agent-cca) (`capability.copilot-coding-agent`)
 - **Contents:** [Improve test coverage for API issue](../../inventory.md) (`content.improve-api-test-coverage-issue`)
 
-1. **Add the demo repository**: Use the split button to click "Add GitHub repository", search for `demo_octocat_supply`, and add it. The repo will be cloned and you'll land on the session screen.
+1. **Add the demo repository**: Use the split button to click "Add GitHub repository", search for your demo repository (the one created from this template), and add it. The repo will be cloned and you'll land on the session screen.
 2. **Kick off the cart page session immediately** (before touring the interface -- this gives the agent time to work while you talk):
 
     ```prompt
@@ -117,8 +115,6 @@ While the cart page agent is working, use the time to tour other parts of the ap
 ## Path 2 — End-to-End (Order Tracking)
 
 **Duration:** ~10-15 minutes (including agent run time for planning + fleet)
-
-**Video:** [GitHub Copilot App 02 - Fleet](https://microsofteur.sharepoint.com/:v:/s/octodemo/IQAFa7g-Ugo4SqOxJCJgMHbcAbutRbqbVcru-eVRbQHD9_Q?e=KgDrtF&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 > [!NOTE]
 > This path showcases the GitHub Copilot App's ability to research a feature, break it into workstreams, create issues, and spin up multiple coding agents working in parallel. It's a complete end-to-end scenario from idea to implementation.
@@ -251,8 +247,6 @@ While the cart page agent is working, use the time to tour other parts of the ap
 
 - **id**: walkthrough.copilot.app-compliance-workflow
 - **Capabilities:** [GitHub Copilot App](../../capabilities/copilot-app.md#github-copilot-app) (`capability.github-copilot-app`), [Copilot Agent Automations](../../capabilities/copilot-ide.md#copilot-agent-automations) (`capability.agent-automations`), [Copilot Custom Agents](../../capabilities/copilot-general.md#copilot-custom-agents) (`capability.custom-agents`)
-
-**Video:** [GitHub Copilot App 03 - Workflows Demo](https://microsofteur.sharepoint.com/:v:/s/octodemo/IQACKlZpN9IFRrJ-g6t5V0q7ARtLa9azUYTORlCGp9Yu1aU?e=T5Bsre&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 > [!NOTE]
 > This demo builds on the `OD OctoCAT Supply Compliance Docs` Copilot Space. See [spaces.md](./spaces.md) for more details on this space and its contents.

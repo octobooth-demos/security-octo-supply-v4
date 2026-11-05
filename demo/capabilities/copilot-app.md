@@ -26,9 +26,6 @@ A standalone, session-based development app — 'Mission Control' for agentic wo
 - `content.product-stock-database-issue`, `content.product-stock-api-issue`, `content.product-stock-frontend-issue` — standalone task issues implemented in order, each in its own app session and PR.
 - `scenario.cart-page` — Path 1 simple intro feature.
 - `scenario.order-tracking` — Path 2 end-to-end research/plan/parallel feature.
-- `content.hydrafusion-prep-prompt` — App prompt for creating three separate sessions with HydraFusion selected.
-- `content.hydrafusion-prep-canvas` — one-button launcher for named HydraFusion worktree sessions.
-- `content.hydrafusion-single-prompt`, `content.hydrafusion-cascade-prompt`, and `content.hydrafusion-critique-prompt` — prompts demonstrating HydraFusion's adaptive workflows.
 
 ### Shown in walkthroughs
 
@@ -44,7 +41,6 @@ A standalone, session-based development app — 'Mission Control' for agentic wo
 - `walkthrough.copilot.msbuild-canvas-issue-analyzer`
 - `walkthrough.copilot.msbuild-rubber-duck-review`
 - `walkthrough.copilot.msbuild-agent-merge`
-- `walkthrough.copilot.hydrafusion`
 
 ## Copilot Canvases
 
@@ -61,9 +57,7 @@ Guided, customizable UI surfaces in the GitHub Copilot App for collaborating wit
 
 - `scenario.cart-page` — cart-page issue analysed in the canvas.
 - `content.issue-readiness-canvas` — issue-readiness-analyzer canvas.
-- `content.hydrafusion-prep-canvas` — HydraFusion demo session launcher.
 
 ### Shown in walkthroughs
 
 - `walkthrough.copilot.msbuild-canvas-issue-analyzer`
-- `walkthrough.copilot.hydrafusion`
