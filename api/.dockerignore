@@ -6,7 +6,6 @@ yarn-error.log*
 
 # Development files
 .env*
-!.env.example
 
 # IDE files
 .vscode/
