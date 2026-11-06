@@ -118,6 +118,16 @@ To showcase extended capabilities:
    - `MCP: List servers` -> `github` -> `Start server`
 3. Configure with a GitHub PAT (required for GitHub MCP server)
 
+## 📋 Using this template
+
+If you create your own copy of this repository, here's what to expect from the included workflows:
+
+- **CI and CodeQL** run automatically on pushes and pull requests.
+- **CodeQL results** require GitHub Code Security on private repositories. If your organization enables CodeQL **default setup**, it conflicts with the template's `codeql-advanced.yml` workflow — disable one or the other.
+- **Build and Publish** calls reusable workflows from [`octobooth-demos/octocat-supply-reusable-workflows`](https://github.com/octobooth-demos/octocat-supply-reusable-workflows), pinned to the `v1` tag.
+- **Agentic workflows** (daily activity summary on a schedule, build-failure analysis, issue triage, PR doc/tests check) need GitHub Copilot and [gh-aw](https://github.com/github/gh-aw) set up in your own account; without that they fail harmlessly.
+- **Deploy to Azure** is dispatched automatically after Build and Publish succeeds on `main`. It only verifies the container image attestations — the Azure deployment step is disabled in this template, so no Azure setup is required. See [docs/deployment.md](docs/deployment.md) if you want to add a real deployment.
+
 ## 📚 Documentation
 
 - [Detailed Architecture](./docs/architecture.md)

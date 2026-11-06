@@ -19,7 +19,7 @@ on:
 engine:
   id: copilot
   model: auto
-if: "${{ github.event.workflow_run.conclusion == 'failure' }}"
+if: "${{ github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.head_repository.full_name == github.repository }}"
 concurrency:
   group: "${{ github.workflow }}-${{ github.event.workflow_run.id }}"
   cancel-in-progress: false
