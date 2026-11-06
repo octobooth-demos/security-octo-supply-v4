@@ -127,20 +127,12 @@ DB_TIMEOUT=30000
 
 2. **CI/CD Pipeline Configuration**
    - Use OIDC for authentication from workflows:
-      - Run [this script](../infra/create-sp-oidc.sh) to create a service principal and configure OIDC for the repo.
-      - The script sets up:
-         - a Service Principal configured with OIDC
-         - Resource Groups for staging and prod
-         - An Azure Container Registry for hosting the images
-         - Actions Variables needed for workflows
-            - AZURE_CLIENT_ID: ID of the SP
-            - AZURE_TENANT_ID: ID of the tenant
-            - AZURE_SUBSCRIPTION_ID: ID of the subscription
-            - AZURE_RESOURCE_GROUP: Stating Resource Group
-            - AZURE_RESOURCE_GROUP_PROD: Prod Resource Group
-            - AZURE_ACR_NAME: Name of the AZCR
-         - 2 environments in the repo: Staging and Prod, with a manual approval on Prod
-         - use the step output of the deply step to update the frontend URL as the URL of the enviroment
+      - Create a Service Principal with an OIDC federated credential for this repo and a Resource Group to deploy into.
+      - Set these Actions variables, which [`deploy.yml`](../.github/workflows/deploy.yml) reads:
+         - AZURE_CLIENT_ID: ID of the SP
+         - AZURE_TENANT_ID: ID of the tenant
+         - AZURE_SUBSCRIPTION_ID: ID of the subscription
+         - AZURE_RESOURCE_GROUP_NAME: Resource Group to deploy into
 
 3. **Deployment Strategy**
    - for any push, execute the CI build

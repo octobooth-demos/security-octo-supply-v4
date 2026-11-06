@@ -126,7 +126,7 @@ If you create your own copy of this repository, here's what to expect from the i
 - **CodeQL results** require GitHub Code Security on private repositories. If your organization enables CodeQL **default setup**, it conflicts with the template's `codeql-advanced.yml` workflow — disable one or the other.
 - **Build and Publish** calls reusable workflows from [`octobooth-demos/octocat-supply-reusable-workflows`](https://github.com/octobooth-demos/octocat-supply-reusable-workflows), pinned to the `v1` tag.
 - **Agentic workflows** (daily activity summary on a schedule, build-failure analysis, issue triage, PR doc/tests check) need GitHub Copilot and [gh-aw](https://github.com/github/gh-aw) set up in your own account; without that they fail harmlessly.
-- **Deploy to Azure** is dispatched automatically after Build and Publish succeeds on `main` (and can be run manually). It needs your own `AZURE_*` repository variables and fails without them — see [docs/deployment.md](docs/deployment.md).
+- **Deploy to Azure** is dispatched automatically after Build and Publish succeeds on `main` (and can be run manually). It needs your own `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_CLIENT_ID`, and `AZURE_RESOURCE_GROUP_NAME` repository variables and fails without them — see [docs/deployment.md](docs/deployment.md).
 
 ## 📚 Documentation
 
