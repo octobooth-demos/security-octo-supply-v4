@@ -126,9 +126,10 @@ DB_TIMEOUT=30000
    - `gh cli` (use `brew install gh`) and then run `gh login` to log in to your GitHub account
 
 2. **CI/CD Pipeline Configuration**
+   > **Note:** In this template, the `deploy` job in [`deploy.yml`](../.github/workflows/deploy.yml) is disabled (it only verifies image attestations). The steps below describe what you'd configure to implement Azure deployment yourself.
    - Use OIDC for authentication from workflows:
       - Create a Service Principal with an OIDC federated credential for this repo and a Resource Group to deploy into.
-      - Set these Actions variables, which [`deploy.yml`](../.github/workflows/deploy.yml) reads:
+      - Set these Actions variables, which [`deploy.yml`](../.github/workflows/deploy.yml) already maps into its environment:
          - AZURE_CLIENT_ID: ID of the SP
          - AZURE_TENANT_ID: ID of the tenant
          - AZURE_SUBSCRIPTION_ID: ID of the subscription
