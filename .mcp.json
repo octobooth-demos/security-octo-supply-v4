@@ -1,33 +1,11 @@
 {
   "mcpServers": {
-    "github": {
-      "type": "local",
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "ghcr.io/github/github-mcp-server"
-      ]
-    },
     "github-remote": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/",
       "headers": {
         "X-MCP-Toolsets": "actions, code_security, dependabot, discussions, issues, orgs, projects, pull_requests, repos, secret_protection, security_advisories, copilot, copilot_spaces"
       }
-    },
-    "Azure MCP Server": {
-      "type": "local",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@azure/mcp@latest",
-        "server",
-        "start"
-      ]
     },
     "github-agentic-workflows": {
       "type": "local",

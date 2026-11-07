@@ -155,7 +155,7 @@ Demo repositories are created from this template by [octobooth-demos/repo-setup-
 
 Fixing vulnerabilities in a demo repository created from this template is expected — that's the demo.
 
-The Playwright MCP server is only in `.vscode/mcp.json`, not `.mcp.json`, because booth machines can't reach the npm registry and an `npx` server there stalls local Copilot sessions.
+`.mcp.json` only lists servers that don't download packages or images at startup (no `npx`, `uvx`, or `docker run`), because booth machines can't reach those registries and such a server stalls local Copilot sessions. Playwright, Azure, and the Docker-based GitHub MCP servers stay in `.vscode/mcp.json` for VS Code.
 
 ---
 
