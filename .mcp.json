@@ -1,13 +1,5 @@
 {
   "mcpServers": {
-    "playwright": {
-      "type": "local",
-      "command": "npx",
-      "args": [
-        "@playwright/mcp@latest",
-        "--browser=msedge"
-      ]
-    },
     "github": {
       "type": "local",
       "command": "docker",
