@@ -1,6 +1,6 @@
 ---
 description: "Guidance for editing and reviewing API code changes in the API."
-applyTo: "api/src/**/*.ts, api/src/**/*.py, api/app/**/*.php, api/routes/**/*.php, api/package.json, api/pyproject.toml, api/composer.json, database/migrations/**, database/seed/**, api/api-swagger.json"
+applyTo: "api/src/**/*.ts, api/src/**/*.py, api/app/**/*.php, api/routes/**/*.php, api/package.json, api/pyproject.toml, api/composer.json, api/database/migrations/**, api/database/seed/**, api/api-swagger.json"
 ---
 # API Review Guidance
 
