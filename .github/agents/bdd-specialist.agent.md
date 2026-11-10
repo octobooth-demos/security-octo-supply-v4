@@ -281,7 +281,6 @@ npm run test:e2e
 2. Both API (port 3000) and frontend (port 5137) must be running
 
 **Dependencies**:
-- `@playwright/test: ^1.49.0` in `frontend/package.json`
 - Browsers installed via: `npx playwright install chromium msedge`
 
 ### Reference File Structure
