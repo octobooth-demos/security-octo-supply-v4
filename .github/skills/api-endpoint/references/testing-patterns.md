@@ -220,12 +220,6 @@ describe('exists', () => {
 });
 ```
 
-### Test Coverage Requirements
-
-Your repository tests must cover:
-
-- ✅ **Mock verification** - Ensure correct SQL queries and parameters are used
-
 ## Route Integration Tests (Optional)
 
 Create integration tests in `api/src/routes/{entity}.test.ts` to test HTTP endpoints:
