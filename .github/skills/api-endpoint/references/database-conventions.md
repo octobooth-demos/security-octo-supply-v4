@@ -106,11 +106,11 @@ Order matters! Tables with foreign keys must be seeded after their referenced ta
 ```sql
 -- 004_products.sql
 
-INSERT INTO products (product_id, name, supplier_id, price, description)
+INSERT INTO products (product_id, name, supplier_id, price, description, sku, unit)
 VALUES 
-  (1, 'Smart Cat Feeder', 1, 129.99, 'Automatic feeding system'),
-  (2, 'GPS Cat Collar', 1, 79.99, 'Real-time tracking'),
-  (3, 'Interactive Laser Toy', 2, 49.99, 'Automated play system');
+  (1, 'Smart Cat Feeder', 1, 129.99, 'Automatic feeding system', 'CAT-FEED-001', 'piece'),
+  (2, 'GPS Cat Collar', 1, 79.99, 'Real-time tracking', 'CAT-COLLAR-001', 'piece'),
+  (3, 'Interactive Laser Toy', 2, 49.99, 'Automated play system', 'CAT-FLIX-001', 'piece');
 ```
 
 ### Key Conventions
