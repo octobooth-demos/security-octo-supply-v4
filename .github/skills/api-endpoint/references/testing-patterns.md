@@ -228,6 +228,7 @@ Create integration tests in `api/src/routes/{entity}.test.ts` to test HTTP endpo
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import request from 'supertest';
 import express from 'express';
+import { NotFoundError } from '../utils/errors';
 import entityNameRoutes from './entityName';
 import * as repo from '../repositories/entityNamesRepo';
 
