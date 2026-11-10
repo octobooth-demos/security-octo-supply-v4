@@ -143,7 +143,7 @@ Check the migration files in `api/database/migrations/` for exact schema.
 <coverage_commands>
 Run coverage for specific file (non-interactive):
 ```bash
-cd api && npm run test:coverage -- --reporter=json-summary api/src/routes/{file}.test.ts
+cd api && npm run test:coverage -- --reporter=json-summary src/routes/{file}.test.ts
 ```
 
 View coverage summary:
