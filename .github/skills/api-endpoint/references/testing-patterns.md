@@ -367,7 +367,7 @@ npm --prefix api test -- --coverage
 npm --prefix api test -- --watch
 
 # Run tests matching a pattern
-npm test --workspace=api -- --grep "findAll"
+npm --prefix api test -- --grep "findAll"
 ```
 
 ### Test Output
