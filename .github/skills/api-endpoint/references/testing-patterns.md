@@ -361,7 +361,7 @@ npm --prefix api test
 npm --prefix api test -- entityNamesRepo.test.ts
 
 # Run with coverage
-npm test --workspace=api -- --coverage
+npm --prefix api test -- --coverage
 
 # Run in watch mode
 npm test --workspace=api -- --watch
