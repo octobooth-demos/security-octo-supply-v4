@@ -129,9 +129,8 @@ Gather enough context to refactor confidently and safely.
 <verification>
 After refactoring, verify:
 
-1. **Run Tests**: Use #tool:execute/runTests to confirm all pass
-2. **Check Errors**: No TypeScript or lint errors
-3. **Pattern Consistency**: Matches codebase style and guidelines
+1. **Check Errors**: No TypeScript or lint errors
+2. **Pattern Consistency**: Matches codebase style and guidelines
 
 Only proceed to handoff when tests are GREEN ✅
 
