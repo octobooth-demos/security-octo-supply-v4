@@ -224,7 +224,6 @@ describe('exists', () => {
 
 Your repository tests must cover:
 
-- ✅ **Success cases** - Verify correct behavior with valid data
 - ✅ **Edge cases** - Empty results, null values, boundary conditions
 - ✅ **Error cases** - Database failures, not found scenarios, constraint violations
 - ✅ **Mock verification** - Ensure correct SQL queries and parameters are used
