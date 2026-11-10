@@ -33,7 +33,6 @@ STOP IMMEDIATELY if you:
 - Optimize prematurely
 - Add "nice to have" features
 
-Implement ONLY what the tests require. Nothing more.
 </stopping_rules>
 
 <workflow>
