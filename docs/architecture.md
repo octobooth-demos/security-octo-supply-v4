@@ -84,7 +84,7 @@ flowchart TD
 
 - Access: thin repository layer that maps camelCase models to snake_case columns
 
-- Migrations: SQL scripts in `api/sql/migrations` executed in order and tracked in a `migrations` table
+- Migrations: SQL scripts in `api/database/migrations` executed in order and tracked in a `migrations` table
 - Seeding: ordered SQL scripts in `api/sql/seed` to bootstrap demo data
 - Test mode: in-memory database (`:memory:`) for fast and isolated tests
 
