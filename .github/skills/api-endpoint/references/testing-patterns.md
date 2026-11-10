@@ -355,7 +355,7 @@ describe('EntityName Routes', () => {
 
 ```bash
 # Run all tests
-npm test --workspace=api
+npm --prefix api test
 
 # Run specific test file
 npm test --workspace=api -- entityNamesRepo.test.ts
