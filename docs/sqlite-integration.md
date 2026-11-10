@@ -142,7 +142,7 @@ Migration files are executed in order and tracked in the `migrations` table.
 
 ### Seed Data
 
-Sample data is provided through seed files in `api/sql/seed/`:
+Sample data is provided through seed files in `api/database/seed/`:
 
 - `001_suppliers.sql` - Supplier data
 - `002_headquarters.sql` - Headquarters data
