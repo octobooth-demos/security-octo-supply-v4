@@ -358,7 +358,7 @@ describe('EntityName Routes', () => {
 npm --prefix api test
 
 # Run specific test file
-npm test --workspace=api -- entityNamesRepo.test.ts
+npm --prefix api test -- entityNamesRepo.test.ts
 
 # Run with coverage
 npm test --workspace=api -- --coverage
