@@ -224,7 +224,6 @@ describe('exists', () => {
 
 Your repository tests must cover:
 
-- ✅ **CRUD operations** - Test all create, read, update, delete methods
 - ✅ **Success cases** - Verify correct behavior with valid data
 - ✅ **Edge cases** - Empty results, null values, boundary conditions
 - ✅ **Error cases** - Database failures, not found scenarios, constraint violations
