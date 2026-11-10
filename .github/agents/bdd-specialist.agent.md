@@ -269,21 +269,18 @@ test.describe('Product catalog discovery', () => {
 
 **Running Tests**:
 ```bash
-# From root - starts both servers and runs tests
-npm run test:e2e
+# From root - starts servers unless PLAYWRIGHT_WEB_SERVER=false
+make test-e2e
 
-# From frontend directory - assumes servers are running
+# From frontend directory - starts servers unless PLAYWRIGHT_WEB_SERVER=false
 npm run test:e2e
 ```
 
 **Important Setup Notes**:
 1. Database must be seeded before tests run (`npm run db:seed`)
 2. Both API (port 3000) and frontend (port 5137) must be running
-3. The root `test:e2e` command handles server startup automatically
-4. Tests wait 10 seconds for servers to initialize
 
 **Dependencies**:
-- `@playwright/test: ^1.49.0` in `frontend/package.json`
 - Browsers installed via: `npx playwright install chromium msedge`
 
 ### Reference File Structure
@@ -305,11 +302,8 @@ frontend/
 api/
 ├── src/
 │   └── routes/                       # API endpoints for test data setup
-└── sql/
+└── database/
     └── seed/                         # Database seed data
-
-Root:
-└── package.json                      # test:e2e command
 ```
 
 ## Coverage Matrix Examples
@@ -411,7 +405,7 @@ export default defineConfig({
   webServer:
     process.env.PLAYWRIGHT_WEB_SERVER !== 'false'
       ? {
-          command: 'npm run dev',
+          command: 'cd .. && make dev',
           port: 5137,
           reuseExistingServer: !process.env.CI,
           timeout: 120_000,

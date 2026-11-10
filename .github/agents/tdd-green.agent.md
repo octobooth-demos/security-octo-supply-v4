@@ -33,7 +33,6 @@ STOP IMMEDIATELY if you:
 - Optimize prematurely
 - Add "nice to have" features
 
-Implement ONLY what the tests require. Nothing more.
 </stopping_rules>
 
 <workflow>
@@ -138,7 +137,7 @@ export class ThingRepository {
 router.get('/:id', async (req, res, next) => {
   try {
     const thing = await repository.getById(Number(req.params.id));
-    if (!thing) throw new NotFoundError('Thing not found');
+    if (!thing) throw new NotFoundError('Thing', Number(req.params.id));
     res.json(thing);
   } catch (error) {
     next(error);
@@ -160,7 +159,6 @@ Look for these patterns in tests:
 - `expect(() => fn()).toThrow(Error)` → throw that error
 - `expect(mockFn).toHaveBeenCalledWith(args)` → call with those args
 
-Implement exactly what tests verify, nothing extra.
 </implementation_guide>
 
 <context_engineering>

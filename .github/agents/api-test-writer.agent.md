@@ -90,7 +90,7 @@ For each endpoint in the route, write tests:
 Execute tests with coverage in **non-interactive mode**:
 
 ```bash
-cd api && npm run test:coverage -- api/src/routes/{routeName}.test.ts
+cd api && npm run test:coverage -- src/routes/{routeName}.test.ts
 ```
 
 Or use #tool:execute/runTests with `mode: "coverage"` to run the specific test file.
@@ -143,7 +143,7 @@ Check the migration files in `api/database/migrations/` for exact schema.
 <coverage_commands>
 Run coverage for specific file (non-interactive):
 ```bash
-cd api && npm run test:coverage -- --reporter=json-summary api/src/routes/{file}.test.ts
+cd api && npm run test:coverage -- --reporter=json-summary src/routes/{file}.test.ts
 ```
 
 View coverage summary:

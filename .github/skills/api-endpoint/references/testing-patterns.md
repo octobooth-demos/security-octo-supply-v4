@@ -220,16 +220,6 @@ describe('exists', () => {
 });
 ```
 
-### Test Coverage Requirements
-
-Your repository tests must cover:
-
-- ✅ **CRUD operations** - Test all create, read, update, delete methods
-- ✅ **Success cases** - Verify correct behavior with valid data
-- ✅ **Edge cases** - Empty results, null values, boundary conditions
-- ✅ **Error cases** - Database failures, not found scenarios, constraint violations
-- ✅ **Mock verification** - Ensure correct SQL queries and parameters are used
-
 ## Route Integration Tests (Optional)
 
 Create integration tests in `api/src/routes/{entity}.test.ts` to test HTTP endpoints:
@@ -238,6 +228,7 @@ Create integration tests in `api/src/routes/{entity}.test.ts` to test HTTP endpo
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import request from 'supertest';
 import express from 'express';
+import { NotFoundError } from '../utils/errors';
 import entityNameRoutes from './entityName';
 import * as repo from '../repositories/entityNamesRepo';
 
@@ -364,19 +355,19 @@ describe('EntityName Routes', () => {
 
 ```bash
 # Run all tests
-npm test --workspace=api
+npm --prefix api test
 
 # Run specific test file
-npm test --workspace=api -- entityNamesRepo.test.ts
+npm --prefix api test -- entityNamesRepo.test.ts
 
 # Run with coverage
-npm test --workspace=api -- --coverage
+npm --prefix api test -- --coverage
 
 # Run in watch mode
-npm test --workspace=api -- --watch
+npm --prefix api test -- --watch
 
 # Run tests matching a pattern
-npm test --workspace=api -- --grep "findAll"
+npm --prefix api test -- --grep "findAll"
 ```
 
 ### Test Output

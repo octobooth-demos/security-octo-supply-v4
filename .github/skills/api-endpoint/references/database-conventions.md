@@ -8,7 +8,7 @@ This document details SQLite database conventions for the OctoCAT Supply Chain A
 api/
 ├── data/
 │   └── app.db              # SQLite database file (gitignored)
-└── sql/
+└── database/
     ├── migrations/         # Schema changes
     │   ├── 001_init.sql
     │   └── 002_add_supplier_status_fields.sql
@@ -53,11 +53,10 @@ CREATE INDEX IF NOT EXISTS idx_inventory_branch ON inventory(branch_id);
 
 ### Key Conventions
 
-1. **Always use IF NOT EXISTS** - Makes migrations idempotent
-2. **INTEGER PRIMARY KEY AUTOINCREMENT** - Standard for auto-incrementing IDs
-3. **Foreign keys** - Always define with REFERENCES clause
-4. **Indexes** - Create for foreign keys and frequently queried columns
-5. **Defaults** - Use SQLite functions like `datetime('now')` for timestamps
+1. **INTEGER PRIMARY KEY AUTOINCREMENT** - Standard for auto-incrementing IDs
+2. **Foreign keys** - Always define with REFERENCES clause
+3. **Indexes** - Create for foreign keys and frequently queried columns
+4. **Defaults** - Use SQLite functions like `datetime('now')` for timestamps
 
 ## Column Naming
 
@@ -107,11 +106,11 @@ Order matters! Tables with foreign keys must be seeded after their referenced ta
 ```sql
 -- 004_products.sql
 
-INSERT INTO products (product_id, name, supplier_id, price, description)
+INSERT INTO products (product_id, name, supplier_id, price, description, sku, unit)
 VALUES 
-  (1, 'Smart Cat Feeder', 1, 129.99, 'Automatic feeding system'),
-  (2, 'GPS Cat Collar', 1, 79.99, 'Real-time tracking'),
-  (3, 'Interactive Laser Toy', 2, 49.99, 'Automated play system');
+  (1, 'Smart Cat Feeder', 1, 129.99, 'Automatic feeding system', 'CAT-FEED-001', 'piece'),
+  (2, 'GPS Cat Collar', 1, 79.99, 'Real-time tracking', 'CAT-COLLAR-001', 'piece'),
+  (3, 'Interactive Laser Toy', 2, 49.99, 'Automated play system', 'CAT-FLIX-001', 'piece');
 ```
 
 ### Key Conventions
@@ -222,7 +221,7 @@ throw new ValidationError('Invalid reference to related entity');
 
 ## Adding a New Table
 
-1. Create migration: `api/sql/migrations/00X_add_table_name.sql`
-2. Create seed (if needed): `api/sql/seed/00X_table_name.sql`
+1. Create migration: `api/database/migrations/00X_add_table_name.sql`
+2. Create seed (if needed): `api/database/seed/00X_table_name.sql`
 3. Restart API to run migrations
 4. Create model, repository, and routes following skill patterns

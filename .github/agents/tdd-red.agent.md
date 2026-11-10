@@ -31,7 +31,6 @@ Default behavior:
 
 When to write multiple tests:
 - If the user clearly requests "all tests", "full test suite", "complete coverage", or equivalent wording, write all relevant failing tests in one pass.
-- Otherwise, stay in incremental TDD mode and write one test only.
 </test_scope_rules>
 
 <stopping_rules>
