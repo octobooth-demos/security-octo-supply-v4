@@ -364,7 +364,7 @@ npm --prefix api test -- entityNamesRepo.test.ts
 npm --prefix api test -- --coverage
 
 # Run in watch mode
-npm test --workspace=api -- --watch
+npm --prefix api test -- --watch
 
 # Run tests matching a pattern
 npm test --workspace=api -- --grep "findAll"
