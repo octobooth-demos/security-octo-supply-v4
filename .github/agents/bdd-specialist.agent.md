@@ -302,7 +302,7 @@ frontend/
 api/
 ├── src/
 │   └── routes/                       # API endpoints for test data setup
-└── sql/
+└── database/
     └── seed/                         # Database seed data
 
 Root:
