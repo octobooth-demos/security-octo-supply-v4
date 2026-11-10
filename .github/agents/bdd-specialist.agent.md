@@ -269,8 +269,8 @@ test.describe('Product catalog discovery', () => {
 
 **Running Tests**:
 ```bash
-# From root - starts both servers and runs tests
-npm run test:e2e
+# From root - starts servers unless PLAYWRIGHT_WEB_SERVER=false
+make test-e2e
 
 # From frontend directory - assumes servers are running
 npm run test:e2e
