@@ -159,7 +159,6 @@ Look for these patterns in tests:
 - `expect(() => fn()).toThrow(Error)` → throw that error
 - `expect(mockFn).toHaveBeenCalledWith(args)` → call with those args
 
-Implement exactly what tests verify, nothing extra.
 </implementation_guide>
 
 <context_engineering>
